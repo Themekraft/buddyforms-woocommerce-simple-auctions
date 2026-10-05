@@ -10,6 +10,7 @@
  * Network: false
  * Text Domain: buddyforms
  * Svn: buddyforms-woocommerce-simple-auction
+ * WC tested up to: 11.1
  * @package bf_woo_simple_auction
  *
  *****************************************************************************
@@ -34,6 +35,15 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
+add_action(
+	'before_woocommerce_init',
+	function () {
+		if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+		}
+	}
+);
 
 if ( ! class_exists( 'bf_woo_simple_auction' ) ) {
 
