@@ -4,7 +4,7 @@ Contributors: svenl77, konradS, buddyforms, gfirem
 Tags: buddypress, user, members, profiles, custom post types, taxonomy, frontend posting, frontend editing, simple auction
 Requires at least: 3.9
 Tested up to: 7.1
-Stable tag: 1.2.6
+Stable tag: 1.2.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,6 +78,10 @@ The plugin should work with every theme. (Please let us know if you experience a
 3. **Date Select** - Select your auction dates with a mobile ready date picker.
 
 == Changelog ==
+= 1.2.7 - 05 Oct 2026 =
+* Compatible with WooCommerce High-Performance Order Storage (HPOS).
+* Tested up to WordPress 7.1 and WooCommerce 11.1.
+
 = 1.2.6 - 20 Dec 2022 =
 * Added jquery to hide empty variation price popup.
 * Improved frontent CSS.
