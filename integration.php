@@ -3,13 +3,14 @@
  * Plugin Name: Buddyforms Simple Auctions Integration for WooCommerce
  * Plugin URI: http://buddyforms.com/downloads/buddyforms-woocommerce-simple-auctions/
  * Description: This plugin adds woocommerce simple auctions fields to frontend buddypress profile interface using buddyforms
- * Version: 1.2.6
+ * Version: 1.2.7
  * Author: ThemeKraft
  * Author URI: https://themekraft.com/buddyforms/
  * License: GPLv2 or later
  * Network: false
  * Text Domain: buddyforms
  * Svn: buddyforms-woocommerce-simple-auction
+ * WC tested up to: 11.1
  * @package bf_woo_simple_auction
  *
  *****************************************************************************
@@ -34,6 +35,15 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
+
+add_action(
+	'before_woocommerce_init',
+	function () {
+		if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+		}
+	}
+);
 
 if ( ! class_exists( 'bf_woo_simple_auction' ) ) {
 
